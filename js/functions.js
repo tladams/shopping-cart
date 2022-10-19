@@ -11,7 +11,8 @@ const itemInfo = ([
           quantity
     }      
 ]) => {
-    itemInfo.map(cart);
+    itemInfo.product.map((product) => cart.product).join();
+    itemInfo.quantity.map((quantity) => cart.quantity).join();
 };
 
 function calculateTotal(quantity, price) {
@@ -20,11 +21,12 @@ function calculateTotal(quantity, price) {
 
 function outputCartRow(item, total) {
     document.write('<tr>');
-    document.write('<td>' + itemInfo.filename + '</td>');
+    document.write('<td>' + itemInfo.product.filename + '</td>');
     document.write('<td>' + item + '</td>');
-    document.write('<td>' + itemInfo.quantity + '</td>');
+    document.write('<td>' + itemInfo.product.quantity + '</td>');
     document.write('<td>"$' + total.toFixed(2)  + '</td>');
-    document.write('<td>' + calculateTotal(itemInfo.quantity, itemInfo.price).toFixed(2) + '</td>');    
+    document.write(
+        '<td>' + calculateTotal(itemInfo.product.quantity, itemInfo.product.price).toFixed(2) + '</td>');    
 }
 
 function calculateSubTotal(amounts) {
