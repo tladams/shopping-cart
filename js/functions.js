@@ -1,46 +1,32 @@
 /* define your functions here */
 
 
-const itemInfo = ([
-    {
-          product: {
-                title,
-                filename,
-                price
-          },
-          quantity
-    }      
-]) => {
-    itemInfo.product.map((product) => cart.product).join();
-    itemInfo.quantity.map((quantity) => cart.quantity).join();
-};
 
 function calculateTotal(quantity, price) {
     return quantity * price;
 }
 
-function outputCartRow(item, total) {
+function outputCartRow(filename, item, price, quantity) {
     document.write('<tr>');
-    document.write('<td>' + itemInfo.product.filename + '</td>');
+    document.write('<td>' + filename + '</td>');
     document.write('<td>' + item + '</td>');
-    document.write('<td>' + itemInfo.product.quantity + '</td>');
-    document.write('<td>"$' + total.toFixed(2)  + '</td>');
-    document.write(
-        '<td>' + calculateTotal(itemInfo.product.quantity, itemInfo.product.price).toFixed(2) + '</td>');    
+    document.write('<td>' + quantity + '</td>');
+    document.write('<td>' + price.toFixed(2) + '</td>');
+    document.write('<td>' + calculateTotal(quantity, price).toFixed(2) + '</td>');    
 }
 
-function calculateSubTotal(amounts) {
+function calculateSubTotal(quanities, amounts) {
     let subtotal = 0;
-    for(let i in amounts) {
-        subtotal += i;
-    }
+    subtotal += quanities[0] * amounts[0];
+    subtotal += quanities[1] * amounts[1];
+    subtotal += quanities[2] * amounts[2];
     return subtotal;
+
 }
 
-function calculateGrandTotal(subtotal, tax, ship_thresh) {
-    let shipping = calculateShipping(subtotal, ship_thresh);
-    let grand_total = subtotal + tax + shipping;
-    return grand_total;
+function calculateGrandTotal(subtotal, shipping, tax) {
+    let grandTotal = subtotal + shipping + tax;
+    return grandTotal;
 }
 
 function calculateTax(tax) {
