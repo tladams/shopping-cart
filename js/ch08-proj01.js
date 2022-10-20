@@ -6,9 +6,9 @@ const shipping_threshold = prompt('Enter shipping threshold (1000)');
    going to concern ourselves with minimizing globals, etc */
 
 // first 3 rows
-document.write(outputCartRow('<img src="/Users/tessaadams/CS343/project1-shopping/images/105070.jpg"/>', "Portrait of Marten Soolmans", 75.0, 3));
-document.write(outputCartRow('<img src="/Users/tessaadams/CS343/project1-shopping/images/106060.jpg"/>', "View of Houses in Delft", 125.0, 1));
-document.write(outputCartRow('<img src="/Users/tessaadams/CS343/project1-shopping/images/106050.jpg"/>', "Woman Reading a Letter", 100.0, 2));
+document.write(outputCartRow('<img src="images/105070.jpg"/>', "Portrait of Marten Soolmans", 75.0, 3));
+document.write(outputCartRow('<img src="images/106060.jpg"/>', "View of Houses in Delft", 125.0, 1));
+document.write(outputCartRow('<img src="images/106050.jpg"/>', "Woman Reading a Letter", 100.0, 2));
 
 // subtotal row
 document.write('<tr>');
