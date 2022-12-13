@@ -1,4 +1,4 @@
-# project1-shopping
+# shopping-cart
 
 This website is a practice run in JS for using user input to do specific calculations.
 
